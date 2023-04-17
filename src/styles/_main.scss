@@ -1,11 +1,17 @@
+body{
+  background:#000;
+}
 .main-wrap {
   background: #141414;
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
 
   .main-header {
-    padding: 20rem 60rem;
+    padding: 20rem 0;
     display: flex;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    background: #000;
     align-items: center;
 
     .logo {
@@ -16,11 +22,73 @@
     .main-header-search-box {
       margin-left: auto;
     }
+    nav{
+      margin-left:40rem;
+    }
+  }
+
+  .main-bg{
+    width: 100%;
+    background: #000;
+    position:relative;
+    .main-bg-box{
+
+      position: absolute;
+      bottom: 25%;
+      left: 60rem;
+      width:400px;
+
+      img{
+        width: 100%;
+      }
+
+      .main-start-btn{
+        display: flex;
+        align-items: center;
+        background: #fff;
+        color: #000;
+        border: none;
+        padding: 10rem 30rem;
+        font-size: 28rem;
+        border-radius: 10rem;
+        margin-top:30rem;
+        margin-right:30rem;
+        cursor: pointer;
+      }
+
+      .main-info-btn{
+        display: flex;
+        align-items: center;
+        background: rgba(109, 109, 110, 0.4);
+        color: #fff;
+        border: none;
+        padding: 10rem 30rem;
+        font-size: 28rem;
+        border-radius: 10rem;
+        margin-top:30rem;
+        cursor: pointer;
+      }
+
+      .main-btn-box{
+        display: flex;
+      }
+    }
+    .react-player{
+      &::before{
+        position: absolute;
+        display: flex;
+        width:100%;
+        height:100%;
+        content: '';
+        background:rgba(0,0,0,.2);
+      }
+    }
+
   }
 
   .main-body {
     color: #fff;
-    margin:80rem 0;
+    background:#000;
 
     img{
       width:calc(100% - 10rem);
