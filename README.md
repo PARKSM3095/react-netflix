@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# 🎞React 를 사용한 Netflix 홈페이지🎞
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+리액트를 사용한 넷플릭스 벤치마킹 제작 개인 사이드 프로젝트
 
-## Available Scripts
 
-In the project directory, you can run:
+## ✏ 프로젝트 개요
 
-### `npm start`
+React에 대하여 공부하고 습득하고 싶었고 React를 사용하여 기존 JS를 이용한 이벤트 핸들링과 비교하여 새로운 접근방식에 대한 경험이 목적이였습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+styled-components를 이용한 CSS를 통한 이벤트 핸들링이 매우 흥미로웠고 ES6에 대한 지식에 경험을 하기에도 좋은 시도라고 생각했습니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+퇴근 후 시간나는대로 개인 사이드 프로젝트로 진행하고 있습니다.
 
-### `npm test`
+ ## 🕥 개발기간 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2023.04.01 (토) ~ 
 
-### `npm run build`
+## 💡 프로젝트 구성 및 동작
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`node -v` v14.19.1
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm i` 프로젝트에 필요한 node_modules를 다운로드 받습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm start` 로컬서버로 프로젝트를 실행합니다.
 
-### `npm run eject`
+##  🗂 프로젝트 디렉토리 구조
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+src
+├─components
+├─imgs
+│  └─login
+└─styles
+    └─base
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+``` 
+## 🛠 사용기술
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- styled-components
+- Route
+- Link
+- useState, useEffect, useRef
+- React-icons
+- React-Swiper
+- ReactPlayer
+- axios
+- Scss
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📌 진행상황
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 페이지 접속 시 최초 로그인 화면 구성(로그인 후 메인페이지 이동)
+- 영화리스트 API 출력
+- 메인페이지 자동 예고편 실행 및 카테고리별 영화리스트 slide 구성
