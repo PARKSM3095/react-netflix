@@ -9,7 +9,7 @@ function Login({ Logo }) {
       </div>
 
       <div className="login-header">
-        <Link to="/main">
+        <Link to="/main ">
           <img className="logo" src={Logo} alt="logo"></img>
         </Link>
       </div>
