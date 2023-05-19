@@ -3,6 +3,7 @@ import axios from "axios";
 import NowPlayingSwiper from "./swiper/NowPlayingSwiper";
 import PopularSwiper from "./swiper/PopularSwiper";
 import UpcomingSwiper from "./swiper/UpcomingSwiper";
+import TopRatedSwiper from "./swiper/TopRatedSwiper";
 import MainBg from "./MainBg";
 import Header from "./Header";
 import Maininfo from "./info/Maininfo";
@@ -40,7 +41,6 @@ function Main() {
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
-    console.log(window.scrollY);
     if (window.scrollY >= 66) {
       setNavbar(true);
     } else {
@@ -53,22 +53,37 @@ function Main() {
     window.addEventListener("scroll", changeBackground);
   });
 
+  const [showHTML, setShowHTML] = useState(false);
+
+  const openSearchbar = () => {
+    setShowHTML(true);
+  };
+
+  const closeSearchbar = () => {
+    setShowHTML(false);
+  };
+
   return (
     <div className="main-wrap">
       <div className={navbar ? "main-header active" : "main-header"}>
-        <Header></Header>
+        <Header openSearchbar={openSearchbar} showHTML={showHTML}></Header>
       </div>
-      <div className="main-bg">
-        <MainBg openModal={openModal}></MainBg>
-      </div>
-      <div className="main-body">
-        <NowPlayingSwiper></NowPlayingSwiper>
-      </div>
-      <div className="main-body">
-        <PopularSwiper></PopularSwiper>
-      </div>
-      <div className="main-body">
-        <UpcomingSwiper></UpcomingSwiper>
+      <div class="body-wrap" onClick={closeSearchbar}>
+        <div className="main-bg">
+          <MainBg openModal={openModal}></MainBg>
+        </div>
+        <div className="main-body">
+          <NowPlayingSwiper></NowPlayingSwiper>
+        </div>
+        <div className="main-body">
+          <UpcomingSwiper></UpcomingSwiper>
+        </div>
+        <div className="main-body">
+          <TopRatedSwiper></TopRatedSwiper>
+        </div>
+        <div className="main-body">
+          <PopularSwiper></PopularSwiper>
+        </div>
       </div>
       {modalIsOpen ? (
         <Maininfo

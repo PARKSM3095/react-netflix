@@ -22,6 +22,24 @@ const StyleIoIosArrowForward = styled(IoIosArrowForward)`
 const StyleSwiper = styled(Swiper)`
   padding: 0 60rem;
 
+  &:hover:before {
+    background: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(20, 20, 20, 0.7) 100%
+    );
+    transition: 0.3s all;
+  }
+
+  &:hover:after {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7) 100%,
+      rgba(20, 20, 20, 0.7) 0%
+    );
+    transition: 0.3s all;
+  }
+
   &:before {
     content: "";
     position: absolute;
@@ -30,11 +48,6 @@ const StyleSwiper = styled(Swiper)`
     left: 0;
     width: 50rem;
     height: 100%;
-    background: linear-gradient(
-      270deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(20, 20, 20, 0.7) 100%
-    );
     z-index: 10;
   }
   &:after {
@@ -46,11 +59,6 @@ const StyleSwiper = styled(Swiper)`
     top: 20rem;
     width: 60rem;
     height: 100%;
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.7) 100%,
-      rgba(20, 20, 20, 0.7) 0%
-    );
     z-index: 1;
   }
   &:hover ${StyleIoIosArrowBack} {
@@ -79,7 +87,7 @@ function PopularSwiper() {
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=27329c7fc585a6117a294d335030268f&language=ko&page=1%C2%AEion=KR"
+        "https://api.themoviedb.org/3/movie/popular?api_key=27329c7fc585a6117a294d335030268f&language=ko&page=1%C2%AEion=KR"
       )
       .then((data) => {
         SetPopular(data.data.results);
@@ -112,7 +120,6 @@ function PopularSwiper() {
                 src={postUrl}
                 alt={item}
                 onClick={() => {
-                  console.log(item);
                   setclickContent(item);
                   setcontentOpen(true);
                   document.body.style.overflow = "hidden";

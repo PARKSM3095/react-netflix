@@ -14,7 +14,6 @@ const StyleAiOutlineClose = styled(AiOutlineClose)`
   cursor: pointer;
   padding: 10rem;
 `;
-
 const StyleAiFillHeart = styled(AiFillHeart)`
   color: #f44336;
   margin-right: 5rem;
@@ -25,29 +24,25 @@ const StyleBsFillHandThumbsUpFill = styled(BsFillHandThumbsUpFill)`
   margin-right: 5rem;
 `;
 
-function Maininfo({
-  ComingPlaying,
-  MovieGenres,
-  postUrl,
-  Collection,
-  setModalIsOpen,
-}) {
-  const popularityUp = Math.floor(ComingPlaying.popularity);
+function TopRatedinfo({ clickContent, setcontentOpen }) {
+  const URILIST = `https://image.tmdb.org/t/p/w300/${clickContent.poster_path}`;
+  const popularityUp = Math.floor(clickContent.popularity);
+
   return (
     <div className="info-bg">
       <div className="info-wrap">
         <div className="info-content">
           <div className="info-title">
-            <h2>{ComingPlaying.title}</h2>
-            <h5>{ComingPlaying.original_title}</h5>
+            <h2>{clickContent.title}</h2>
+            <h5>{clickContent.original_title}</h5>
             <div className="info-body">
               <div className="info-body-left">
-                <img src={postUrl} alt={ComingPlaying.title}></img>
+                <img src={URILIST} alt={clickContent.title}></img>
               </div>
               <div className="info-body-right">
-                <p className="title">{ComingPlaying.release_date}</p>
-                <p className="tagline">{ComingPlaying.tagline}</p>
-                <p>{ComingPlaying.overview}</p>
+                <p className="title">{clickContent.release_date}</p>
+                <p className="tagline">{clickContent.tagline}</p>
+                <p>{clickContent.overview}</p>
                 <div className="info-body-genre">
                   <p>
                     <StyleBsFillHandThumbsUpFill />
@@ -55,14 +50,14 @@ function Maininfo({
                   </p>
                   <p>
                     <StyleAiFillHeart />
-                    <span>{ComingPlaying.vote_count}</span>
+                    <span>{clickContent.vote_count}</span>
                   </p>
                 </div>
               </div>
             </div>
             <StyleAiOutlineClose
               onClick={() => {
-                setModalIsOpen(false);
+                setcontentOpen(false);
                 document.body.style.overflow = "auto";
               }}
             ></StyleAiOutlineClose>
@@ -73,4 +68,4 @@ function Maininfo({
   );
 }
 
-export default Maininfo;
+export default TopRatedinfo;

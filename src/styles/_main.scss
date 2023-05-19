@@ -1,3 +1,20 @@
+@keyframes showSearchbar1 {
+  0% {
+    left:68.5%;
+  }
+  100% {
+    left: 10rem;
+  }
+}
+@keyframes showSearchbar2 {
+  0% {
+    left:68.5%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
 html,body{
   height:100%;
 }
@@ -15,15 +32,15 @@ body{
   padding-bottom:80rem;
 
   .main-header {
-    padding: 20rem 0;
-    padding: 20rem 0;
+    padding: 0;
     display: flex;
-    z-index: 1;
+    z-index: 11;
     position: fixed;
     width: 100%;
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(20,20,20,0) 100%);
     align-items: center;
+    height: 68rem;
 
     &.active{
       transition: .5s all;
@@ -42,9 +59,44 @@ body{
 
     .main-header-search-box {
       margin-left: auto;
+      display: flex;
+      align-items: center;
+      position: relative;
+      justify-content: right;
+      min-width:418rem;
+      .searchbar-wrap{
+        overflow: hidden;
+        width: 312rem;
+        height: 68rem;
+        position: relative;
+
+        input{
+          border:1rem solid rgba(255,255,255,1);
+          background:#000;
+          color:#fff;
+          padding:10rem 20rem 10rem 40rem;
+          margin-right:20rem;
+          min-width: 250rem;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+        }
+      }
+      .active{
+        position: absolute;
+        margin:0;
+        left:10rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      svg{
+        z-index: 1;
+      }
     }
     nav{
-      margin-left:60rem;
+      margin-left:40rem;
       display: flex;
       align-items: center;
     }
@@ -163,6 +215,7 @@ body{
         right: 70rem;
         left: auto;
         width: fit-content;
+        z-index: 0;
       }
       .swiper-pagination-bullet{
         background:#ccc;
@@ -184,7 +237,7 @@ body{
   position: fixed;
   top: 0;
   left:0;
-  z-index: 1;
+  z-index: 11;
   width: 100%;
   height:100%;
   background: rgba(0,0,0,.5);

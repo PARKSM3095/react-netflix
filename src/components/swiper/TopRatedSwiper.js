@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Navigation, Pagination } from "swiper";
-import Nowplayinginfo from "../info/Nowplayinginfo";
+import axios from "axios";
+import TopRatedinfo from "./../info/TopRatedinfo";
 
 const StyleIoIosArrowBack = styled(IoIosArrowBack)`
   color: #ccc;
@@ -74,29 +74,28 @@ const StyleSwiper = styled(Swiper)`
   }
 `;
 
-function NowPlayingSwiper() {
+function TopRatedSwiper() {
+  const [TopRated, SetTopRated] = useState([]);
   const navigationNextRef = useRef(null);
   const navigationPrevRef = useRef(null);
   const swiperRef = useRef();
   const BASE_URI = "https://image.tmdb.org/t/p/w300";
-  const [NowPlaying, SetNowPlaying] = useState([]);
   const [clickContent, setclickContent] = useState([]);
   const [contentOpen, setcontentOpen] = useState(false);
 
-  // 현재 상영중인 영화
+  // 개봉 예정 영화
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/now_playing?api_key=27329c7fc585a6117a294d335030268f&language=ko&page=1%C2%AEion=KR"
+        "https://api.themoviedb.org/3/movie/top_rated?api_key=27329c7fc585a6117a294d335030268f&language=ko&page=1%C2%AEion=KR"
       )
       .then((data) => {
-        SetNowPlaying(data.data.results);
+        SetTopRated(data.data.results);
       });
   }, []);
-
   return (
     <>
-      <h3>현재 상영중인 영화</h3>
+      <h3>최고의 랭킹 영화</h3>
       <StyleSwiper
         modules={[Navigation, Pagination]}
         spaceBetween={0}
@@ -113,7 +112,7 @@ function NowPlayingSwiper() {
           swiperRef.current = swiper;
         }}
       >
-        {NowPlaying.map((item, index) => {
+        {TopRated.map((item, index) => {
           const postUrl = `${BASE_URI}${item.backdrop_path}`;
           return (
             <SwiperSlide key={item.id}>
@@ -130,10 +129,10 @@ function NowPlayingSwiper() {
           );
         })}
         {contentOpen ? (
-          <Nowplayinginfo
+          <TopRatedinfo
             clickContent={clickContent}
             setcontentOpen={setcontentOpen}
-          ></Nowplayinginfo>
+          ></TopRatedinfo>
         ) : null}
         <span
           className="movie-navigation-left"
@@ -152,4 +151,4 @@ function NowPlayingSwiper() {
   );
 }
 
-export default NowPlayingSwiper;
+export default TopRatedSwiper;
