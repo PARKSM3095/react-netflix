@@ -57,3 +57,5 @@ src
 2023.04.17 - favicon 추가 / component화 진행 / 정보 버튼 팝업 활성화
 
 2023.05.18 - nav scroll 효과추가 / 각 영화리스트 클릭시 component 생성 및 API 연동
+
+2023.05.19 - searchbar 효과추가 및 검색창 활성화/비활성화 구성
