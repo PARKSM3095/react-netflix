@@ -121,7 +121,6 @@ function UpcomingSwiper() {
                 src={postUrl}
                 alt={item}
                 onClick={() => {
-                  console.log(item);
                   setclickContent(item);
                   setcontentOpen(true);
                   document.body.style.overflow = "hidden";

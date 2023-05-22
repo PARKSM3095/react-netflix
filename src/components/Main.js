@@ -15,7 +15,6 @@ import "swiper/css/scrollbar";
 function Main() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [ComingPlaying, setComingPlaying] = useState([]);
-  const [MovieGenres, setMovieGenres] = useState([]);
   const [Collection, setCollection] = useState([]);
   const BASE_URI = "https://image.tmdb.org/t/p/w300/";
   const postUrl = `${BASE_URI}${ComingPlaying.poster_path}`;
@@ -28,7 +27,6 @@ function Main() {
       )
       .then((data) => {
         setComingPlaying(data.data);
-        setMovieGenres(data.data.genres);
         setCollection(data.data.belongs_to_collection);
       });
   }, []);
@@ -68,28 +66,29 @@ function Main() {
       <div className={navbar ? "main-header active" : "main-header"}>
         <Header openSearchbar={openSearchbar} showHTML={showHTML}></Header>
       </div>
-      <div class="body-wrap" onClick={closeSearchbar}>
+      <div className="body-wrap" onClick={closeSearchbar}>
         <div className="main-bg">
           <MainBg openModal={openModal}></MainBg>
         </div>
-        <div className="main-body">
-          <NowPlayingSwiper></NowPlayingSwiper>
-        </div>
-        <div className="main-body">
-          <UpcomingSwiper></UpcomingSwiper>
-        </div>
-        <div className="main-body">
-          <TopRatedSwiper></TopRatedSwiper>
-        </div>
-        <div className="main-body">
-          <PopularSwiper></PopularSwiper>
+        <div className="body-content-wrap">
+          <div className="main-body first-list">
+            <NowPlayingSwiper></NowPlayingSwiper>
+          </div>
+          <div className="main-body">
+            <UpcomingSwiper></UpcomingSwiper>
+          </div>
+          <div className="main-body">
+            <TopRatedSwiper></TopRatedSwiper>
+          </div>
+          <div className="main-body">
+            <PopularSwiper></PopularSwiper>
+          </div>
         </div>
       </div>
       {modalIsOpen ? (
         <Maininfo
           setModalIsOpen={setModalIsOpen}
           ComingPlaying={ComingPlaying}
-          MovieGenres={MovieGenres}
           postUrl={postUrl}
           Collection={Collection}
         ></Maininfo>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import styled from "styled-components";
 import { AiOutlineClose, AiFillHeart } from "react-icons/ai";
 import { BsFillHandThumbsUpFill } from "react-icons/bs";
@@ -27,6 +28,26 @@ const StyleBsFillHandThumbsUpFill = styled(BsFillHandThumbsUpFill)`
 function Nowplayinginfo({ clickContent, setcontentOpen }) {
   const URILIST = `https://image.tmdb.org/t/p/w300/${clickContent.poster_path}`;
   const popularityUp = Math.floor(clickContent.popularity);
+  const [Genre, setGenre] = useState([]);
+  const contentGenre = clickContent.genre_ids;
+  let GenreList = [];
+
+  // 장르 리스트
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.themoviedb.org/3/genre/movie/list?api_key=27329c7fc585a6117a294d335030268f&language=ko&%C2%AEion=KR"
+      )
+      .then((data) => {
+        setGenre(data.data.genres);
+      });
+  }, []);
+  Genre.map((item) => {
+    if (contentGenre.includes(item.id)) {
+      GenreList.push(item.name);
+    }
+  });
+
   return (
     <div className="info-bg">
       <div className="info-wrap">
@@ -51,6 +72,11 @@ function Nowplayinginfo({ clickContent, setcontentOpen }) {
                     <StyleAiFillHeart />
                     <span>{clickContent.vote_count}</span>
                   </p>
+                </div>
+                <div className="genre-list">
+                  {GenreList.map((item, index) => {
+                    return <p key={index}>{item}</p>;
+                  })}
                 </div>
               </div>
             </div>

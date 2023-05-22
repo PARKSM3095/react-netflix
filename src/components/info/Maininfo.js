@@ -33,6 +33,7 @@ function Maininfo({
   setModalIsOpen,
 }) {
   const popularityUp = Math.floor(ComingPlaying.popularity);
+
   return (
     <div className="info-bg">
       <div className="info-wrap">
@@ -57,6 +58,11 @@ function Maininfo({
                     <StyleAiFillHeart />
                     <span>{ComingPlaying.vote_count}</span>
                   </p>
+                </div>
+                <div className="genre-list">
+                  {ComingPlaying.genres.map((item, index) => {
+                    return <p key={index}>{item.name}</p>;
+                  })}
                 </div>
               </div>
             </div>

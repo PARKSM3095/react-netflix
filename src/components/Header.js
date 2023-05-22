@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { BiSearch, BiBell } from "react-icons/bi";
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ const StyledBiBell = styled(BiBell)`
 const StyledLink = styled(Link)`
   color: #fff;
   text-decoration: none;
-  margin: 0 20rem;
+  margin: 0 10rem;
   font-size: 14rem;
 `;
 
@@ -47,7 +47,7 @@ function Header({ showHTML, openSearchbar }) {
       </nav>
       <div className="main-header-search-box">
         {showHTML ? (
-          <div class="searchbar-wrap">
+          <div className="searchbar-wrap">
             <StyledBiSearch
               onClick={openSearchbar}
               className="active"
