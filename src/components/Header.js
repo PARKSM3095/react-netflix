@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BiSearch, BiBell } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import Logo from "./../imgs/logo.png";
+import Searchbar from "./search/SearchbarInput";
 
 const StyledBiSearch = styled(BiSearch)`
   color: #fff;
@@ -24,13 +25,6 @@ const StyledLink = styled(Link)`
   font-size: 14rem;
 `;
 
-const showSearchbar1 = {
-  animation: "showSearchbar1 250ms ease-in",
-};
-const showSearchbar2 = {
-  animation: "showSearchbar2 250ms ease-in",
-};
-
 function Header({ showHTML, openSearchbar }) {
   return (
     <>
@@ -47,18 +41,10 @@ function Header({ showHTML, openSearchbar }) {
       </nav>
       <div className="main-header-search-box">
         {showHTML ? (
-          <div className="searchbar-wrap">
-            <StyledBiSearch
-              onClick={openSearchbar}
-              className="active"
-              style={showSearchbar1}
-            ></StyledBiSearch>
-            <input
-              type="text"
-              placeholder="제목, 내용을 입력하세요"
-              style={showSearchbar2}
-            ></input>
-          </div>
+          <Searchbar
+            openSearchbar={openSearchbar}
+            StyledBiSearch={StyledBiSearch}
+          />
         ) : (
           <StyledBiSearch onClick={openSearchbar}></StyledBiSearch>
         )}

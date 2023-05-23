@@ -174,6 +174,7 @@ body {
   }
 
   .body-content-wrap {
+    padding-bottom: 80rem;
     .main-body {
       color: #fff;
       background: #181818;
@@ -230,7 +231,7 @@ body {
 
         .swiper-wrapper {
           padding-top: 20rem;
-          z-index: auto;
+          z-index: 1;
         }
 
         .swiper-pagination-bullets {
@@ -347,10 +348,18 @@ body {
           margin-left: 30rem;
           width: 100%;
 
+          .info-body-icon{
+            margin-bottom:20rem;
+          }
+          img{
+            max-width:28rem;
+            margin-right:5rem;
+          }
+
           .title {
             color: #46d369;
             font-weight: 600;
-            margin-bottom: 10rem;
+            margin-bottom: 5rem;
           }
 
           .info-body-genre {
@@ -394,7 +403,7 @@ body {
               border-radius: 20rem;
               margin-right:10rem;
               margin-bottom:0;
-              font-size:18rem;
+              font-size:16rem;
               &:last-child{
                 margin-right:0;
               }
