@@ -74,25 +74,13 @@ const StyleSwiper = styled(Swiper)`
   }
 `;
 
-function UpcomingSwiper() {
-  const [Upcoming, SetUpcoming] = useState([]);
+function UpcomingSwiper({ Upcoming }) {
   const navigationNextRef = useRef(null);
   const navigationPrevRef = useRef(null);
   const swiperRef = useRef();
   const BASE_URI = "https://image.tmdb.org/t/p/w300";
   const [clickContent, setclickContent] = useState([]);
   const [contentOpen, setcontentOpen] = useState(false);
-
-  // 개봉 예정 영화
-  useEffect(() => {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/movie/upcoming?api_key=27329c7fc585a6117a294d335030268f&language=ko&page=1%C2%AEion=KR"
-      )
-      .then((data) => {
-        SetUpcoming(data.data.results);
-      });
-  }, []);
 
   return (
     <>

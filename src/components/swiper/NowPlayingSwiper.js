@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
+import React, { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -74,25 +73,13 @@ const StyleSwiper = styled(Swiper)`
   }
 `;
 
-function NowPlayingSwiper() {
+function NowPlayingSwiper({ NowPlaying }) {
   const navigationNextRef = useRef(null);
   const navigationPrevRef = useRef(null);
   const swiperRef = useRef();
   const BASE_URI = "https://image.tmdb.org/t/p/w300";
-  const [NowPlaying, SetNowPlaying] = useState([]);
   const [clickContent, setclickContent] = useState([]);
   const [contentOpen, setcontentOpen] = useState(false);
-
-  // 현재 상영중인 영화
-  useEffect(() => {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/movie/now_playing?api_key=27329c7fc585a6117a294d335030268f&language=ko&page=1%C2%AEion=KR"
-      )
-      .then((data) => {
-        SetNowPlaying(data.data.results);
-      });
-  }, []);
 
   return (
     <>
@@ -119,7 +106,7 @@ function NowPlayingSwiper() {
             <SwiperSlide key={item.id}>
               <img
                 src={postUrl}
-                alt={item}
+                alt={item.title}
                 onClick={() => {
                   setclickContent(item);
                   setcontentOpen(true);

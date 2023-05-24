@@ -1,6 +1,14 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect } from "react";
 
-function SearchbarInput({ openSearchbar, StyledBiSearch }) {
+function SearchbarInput({
+  openSearchbar,
+  StyledBiSearch,
+  NowPlaying,
+  Upcoming,
+  TopRated,
+  Popular,
+  getSearchData,
+}) {
   const showSearchbar1 = {
     animation: "showSearchbar1 250ms ease-in",
   };
@@ -8,11 +16,15 @@ function SearchbarInput({ openSearchbar, StyledBiSearch }) {
     animation: "showSearchbar2 250ms ease-in",
   };
 
-  const [userInput, setUserInput] = useState("");
+  const searchElement = useRef(null);
 
-  const getSearchData = (e) => {
-    setUserInput(e.target.value.toLowerCase());
-  };
+  useEffect(() => {
+    if (searchElement.current) {
+      setTimeout(() => {
+        searchElement.current.focus();
+      }, 500);
+    }
+  }, []);
 
   return (
     <div className="searchbar-wrap">
@@ -23,9 +35,11 @@ function SearchbarInput({ openSearchbar, StyledBiSearch }) {
       ></StyledBiSearch>
       <input
         type="text"
-        placeholder="제목, 내용, 장르를 입력하세요"
+        placeholder="제목을 입력하세요"
+        maxLength={10}
         style={showSearchbar2}
         onChange={getSearchData}
+        ref={searchElement}
       ></input>
     </div>
   );

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { BiSearch, BiBell } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import Logo from "./../imgs/logo.png";
-import Searchbar from "./search/SearchbarInput";
+import SearchbarInput from "./search/SearchbarInput";
 
 const StyledBiSearch = styled(BiSearch)`
   color: #fff;
@@ -25,7 +25,16 @@ const StyledLink = styled(Link)`
   font-size: 14rem;
 `;
 
-function Header({ showHTML, openSearchbar }) {
+function Header({
+  showHTML,
+  openSearchbar,
+  NowPlaying,
+  Upcoming,
+  TopRated,
+  Popular,
+  searchResult,
+  getSearchData,
+}) {
   return (
     <>
       <nav>
@@ -41,9 +50,15 @@ function Header({ showHTML, openSearchbar }) {
       </nav>
       <div className="main-header-search-box">
         {showHTML ? (
-          <Searchbar
+          <SearchbarInput
             openSearchbar={openSearchbar}
             StyledBiSearch={StyledBiSearch}
+            NowPlaying={NowPlaying}
+            Upcoming={Upcoming}
+            TopRated={TopRated}
+            Popular={Popular}
+            searchResult={searchResult}
+            getSearchData={getSearchData}
           />
         ) : (
           <StyledBiSearch onClick={openSearchbar}></StyledBiSearch>

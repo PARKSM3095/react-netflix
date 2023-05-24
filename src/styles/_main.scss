@@ -110,152 +110,171 @@ body {
     }
   }
 
-  .main-bg {
-    width: 100%;
-    background: #000;
-    position: relative;
-
-    .main-bg-box {
-
-      position: absolute;
-      bottom: 40%;
-      left: 60rem;
-      width: 400px;
-
-      img {
-        width: 100%;
-      }
-
-      .main-start-btn {
-        display: flex;
-        align-items: center;
-        background: #fff;
-        color: #000;
-        border: none;
-        padding: 10rem 30rem;
-        font-size: 28rem;
-        border-radius: 10rem;
-        margin-top: 30rem;
-        margin-right: 30rem;
+  .body-wrap{
+    .searchlist-wrap{
+      padding:160rem 0 0 0;
+      width: 100%;
+      max-width: 1200rem;
+      margin:0 auto;
+      img{
+        margin: 5rem;
+        width: calc(25% - 10rem);
         cursor: pointer;
       }
-
-      .main-info-btn {
-        display: flex;
-        align-items: center;
-        background: rgba(109, 109, 110, 0.4);
-        color: #fff;
-        border: none;
-        padding: 10rem 30rem;
-        font-size: 28rem;
-        border-radius: 10rem;
-        margin-top: 30rem;
-        cursor: pointer;
-      }
-
-      .main-btn-box {
-        display: flex;
+      p{
+        color:#fff;
+        font-size:35rem;
+        margin:0 0 30rem 5rem;
       }
     }
 
-    .react-player {
-      &::after {
-        top: 0;
+    .main-bg {
+      width: 100%;
+      background: #000;
+      position: relative;
+
+      .main-bg-box {
+
         position: absolute;
-        display: flex;
-        width: 100%;
-        height: 100%;
-        content: '';
-        background: rgb(0, 0, 0);
-        background: linear-gradient(0deg, #181818 0%, rgba(0, 0, 0, 0) 30%);
+        bottom: 40%;
+        left: 60rem;
+        width: 400px;
+
+        img {
+          width: 100%;
+        }
+
+        .main-start-btn {
+          display: flex;
+          align-items: center;
+          background: #fff;
+          color: #000;
+          border: none;
+          padding: 10rem 30rem;
+          font-size: 28rem;
+          border-radius: 10rem;
+          margin-top: 30rem;
+          margin-right: 30rem;
+          cursor: pointer;
+        }
+
+        .main-info-btn {
+          display: flex;
+          align-items: center;
+          background: rgba(109, 109, 110, 0.4);
+          color: #fff;
+          border: none;
+          padding: 10rem 30rem;
+          font-size: 28rem;
+          border-radius: 10rem;
+          margin-top: 30rem;
+          cursor: pointer;
+        }
+
+        .main-btn-box {
+          display: flex;
+        }
       }
+
+      .react-player {
+        &::after {
+          top: 0;
+          position: absolute;
+          display: flex;
+          width: 100%;
+          height: 100%;
+          content: '';
+          background: rgb(0, 0, 0);
+          background: linear-gradient(0deg, #181818 0%, rgba(0, 0, 0, 0) 30%);
+        }
+      }
+
     }
 
-  }
+    .body-content-wrap {
+      padding-bottom: 80rem;
+      .main-body {
+        color: #fff;
+        background: #181818;
 
-  .body-content-wrap {
-    padding-bottom: 80rem;
-    .main-body {
-      color: #fff;
-      background: #181818;
+        &.first-list {
+          background: transparent;
 
-      &.first-list {
-        background: transparent;
-
-        h3 {
-          padding-top: 0;
-        }
-      }
-
-      img {
-        width: calc(100% - 10rem);
-      }
-
-      h3 {
-        margin: 0 60rem;
-        font-size: 26rem;
-        padding-top: 60rem;
-      }
-
-      width:100%;
-
-      p {
-        margin-bottom: 10rem;
-      }
-
-      h5 {
-        font-size: 20rem;
-        margin-bottom: 15rem;
-      }
-
-      .swiper {
-        z-index: auto;
-
-        .movie-navigation-left {
-          cursor: pointer;
-          z-index: 10;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-25%);
-          left: 10rem;
-        }
-
-        .movie-navigation-right {
-          cursor: pointer;
-          z-index: 10;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-25%);
-          right: 10rem;
-        }
-
-        .swiper-wrapper {
-          padding-top: 20rem;
-          z-index: 1;
-        }
-
-        .swiper-pagination-bullets {
-          top: 0;
-          right: 70rem;
-          left: auto;
-          width: fit-content;
-          z-index: 0;
-        }
-
-        .swiper-pagination-bullet {
-          background: #ccc;
-          width: 15rem;
-          border-radius: 0;
-          height: 3rem;
-          margin: 2rem;
-
-          &:last-child {
-            margin-right: 0;
+          h3 {
+            padding-top: 0;
           }
         }
 
-        .swiper-pagination-bullet-active {
-          background: #fff;
+        img {
+          width: calc(100% - 10rem);
+        }
+
+        h3 {
+          margin: 0 60rem;
+          font-size: 26rem;
+          padding-top: 60rem;
+        }
+
+        width:100%;
+
+        p {
+          margin-bottom: 10rem;
+        }
+
+        h5 {
+          font-size: 20rem;
+          margin-bottom: 15rem;
+        }
+
+        .swiper {
+          z-index: auto;
+
+          .movie-navigation-left {
+            cursor: pointer;
+            z-index: 10;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-25%);
+            left: 10rem;
+          }
+
+          .movie-navigation-right {
+            cursor: pointer;
+            z-index: 10;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-25%);
+            right: 10rem;
+          }
+
+          .swiper-wrapper {
+            padding-top: 20rem;
+            z-index: 1;
+          }
+
+          .swiper-pagination-bullets {
+            top: 0;
+            right: 70rem;
+            left: auto;
+            width: fit-content;
+            z-index: 0;
+          }
+
+          .swiper-pagination-bullet {
+            background: #ccc;
+            width: 15rem;
+            border-radius: 0;
+            height: 3rem;
+            margin: 2rem;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+
+          .swiper-pagination-bullet-active {
+            background: #fff;
+          }
         }
       }
     }
@@ -337,6 +356,7 @@ body {
         p {
           color: #fff;
           line-height: 1.5;
+          font-size:16rem;
         }
 
         .info-body-left {
@@ -360,6 +380,7 @@ body {
             color: #46d369;
             font-weight: 600;
             margin-bottom: 5rem;
+            font-size:16rem;
           }
 
           .info-body-genre {

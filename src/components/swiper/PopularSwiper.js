@@ -74,8 +74,7 @@ const StyleSwiper = styled(Swiper)`
   }
 `;
 
-function PopularSwiper() {
-  const [Popular, SetPopular] = useState([]);
+function PopularSwiper({ Popular }) {
   const navigationNextRef = useRef(null);
   const navigationPrevRef = useRef(null);
   const swiperRef = useRef();
@@ -83,16 +82,6 @@ function PopularSwiper() {
   const [clickContent, setclickContent] = useState([]);
   const [contentOpen, setcontentOpen] = useState(false);
 
-  // 가장 인기있는 영화
-  useEffect(() => {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=27329c7fc585a6117a294d335030268f&language=ko&page=1%C2%AEion=KR"
-      )
-      .then((data) => {
-        SetPopular(data.data.results);
-      });
-  }, []);
   return (
     <>
       <h3>가장 인기있는 영화</h3>

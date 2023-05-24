@@ -74,8 +74,7 @@ const StyleSwiper = styled(Swiper)`
   }
 `;
 
-function TopRatedSwiper() {
-  const [TopRated, SetTopRated] = useState([]);
+function TopRatedSwiper({ TopRated }) {
   const navigationNextRef = useRef(null);
   const navigationPrevRef = useRef(null);
   const swiperRef = useRef();
@@ -83,16 +82,6 @@ function TopRatedSwiper() {
   const [clickContent, setclickContent] = useState([]);
   const [contentOpen, setcontentOpen] = useState(false);
 
-  // 개봉 예정 영화
-  useEffect(() => {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=27329c7fc585a6117a294d335030268f&language=ko&page=1%C2%AEion=KR"
-      )
-      .then((data) => {
-        SetTopRated(data.data.results);
-      });
-  }, []);
   return (
     <>
       <h3>최고의 랭킹 영화</h3>
