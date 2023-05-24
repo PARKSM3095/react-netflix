@@ -26,12 +26,54 @@ styled-components를 이용한 CSS를 통한 이벤트 핸들링이 매우 흥�
 ##  🗂 프로젝트 디렉토리 구조
 
 ```
-src
-├─components
-├─imgs
-│  └─login
-└─styles
-    └─base
+📦src
+ ┣ 📂components
+ ┃ ┣ 📂info
+ ┃ ┃ ┣ 📜Maininfo.js
+ ┃ ┃ ┣ 📜Nowplayinginfo.js
+ ┃ ┃ ┣ 📜Popularinfo.js
+ ┃ ┃ ┣ 📜TopRatedinfo.js
+ ┃ ┃ ┗ 📜Upcominginfo.js
+ ┃ ┣ 📂search
+ ┃ ┃ ┣ 📜SearchbarInput.js
+ ┃ ┃ ┣ 📜Searchinfo.js
+ ┃ ┃ ┗ 📜SearchList.js
+ ┃ ┣ 📂swiper
+ ┃ ┃ ┣ 📜NowPlayingSwiper.js
+ ┃ ┃ ┣ 📜PopularSwiper.js
+ ┃ ┃ ┣ 📜TopRatedSwiper.js
+ ┃ ┃ ┗ 📜UpcomingSwiper.js
+ ┃ ┣ 📜Header.js
+ ┃ ┣ 📜Login.js
+ ┃ ┣ 📜Main.js
+ ┃ ┗ 📜MainBg.js
+ ┣ 📂imgs
+ ┃ ┣ 📂info
+ ┃ ┃ ┣ 📜12.png
+ ┃ ┃ ┣ 📜15.png
+ ┃ ┃ ┣ 📜18.png
+ ┃ ┃ ┣ 📜all.png
+ ┃ ┃ ┣ 📜list_1.png
+ ┃ ┃ ┣ 📜list_2.png
+ ┃ ┃ ┣ 📜list_3.png
+ ┃ ┃ ┣ 📜list_4.png
+ ┃ ┃ ┣ 📜list_5.png
+ ┃ ┃ ┣ 📜list_6.png
+ ┃ ┃ ┗ 📜list_7.png
+ ┃ ┣ 📂login
+ ┃ ┃ ┗ 📜login_bg.jpg
+ ┃ ┣ 📂main
+ ┃ ┃ ┗ 📜MovieBg.mp4
+ ┃ ┣ 📜bg_title.png
+ ┃ ┗ 📜logo.png
+ ┣ 📂styles
+ ┃ ┣ 📂base
+ ┃ ┃ ┗ 📜_reset.scss
+ ┃ ┣ 📜style.scss
+ ┃ ┣ 📜_login.scss
+ ┃ ┗ 📜_main.scss
+ ┣ 📜App.js
+ ┗ 📜index.js
 
 ``` 
 ## 🛠 사용기술
