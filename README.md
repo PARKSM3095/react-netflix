@@ -2,6 +2,8 @@
 
 리액트를 사용한 넷플릭스 벤치마킹 제작 개인 사이드 프로젝트
 
+프로젝트 배포 링크 : [React Netflix](https://parksm3095.github.io/react-netflix/)
+
 
 ## ✏ 프로젝트 개요
 
