@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-netflix/static/css/main.a36234b0.css",
+    "main.js": "/react-netflix/static/js/main.34a458ff.js",
+    "static/media/MovieBg.mp4": "/react-netflix/static/media/MovieBg.babd1e3a9997fc21d9eb.mp4",
+    "static/media/login_bg.jpg": "/react-netflix/static/media/login_bg.dc4b23ee43a7b55b00bb.jpg",
+    "static/media/bg_title.png": "/react-netflix/static/media/bg_title.9c32bbc2a3b92660285f.png",
+    "index.html": "/react-netflix/index.html",
+    "main.a36234b0.css.map": "/react-netflix/static/css/main.a36234b0.css.map",
+    "main.34a458ff.js.map": "/react-netflix/static/js/main.34a458ff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a36234b0.css",
+    "static/js/main.34a458ff.js"
+  ]
+}
